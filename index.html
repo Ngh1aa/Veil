@@ -3,14 +3,145 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atelier Veil</title>
+    <meta name="description" content="Atelier Veil — fine fragrance and body rituals composed for the hours between memory and imagination." />
+    <meta name="theme-color" content="#080808" />
+    <title>Atelier Veil — Fine Fragrance &amp; Ritual</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="./assets/index-CJjJacYT.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DYPU7GkQ.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/sections.css" />
+    <script type="module" src="./js/app.js"></script>
   </head>
   <body>
-    <div id="root"></div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="page-loader" aria-hidden="true">
+      <span class="page-loader__mark">AV</span>
+      <span class="page-loader__line"></span>
+    </div>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="#top" aria-label="Atelier Veil home">Atelier Veil</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-button>
+        <span>Menu</span><i></i><i></i>
+      </button>
+      <nav class="site-menu" id="site-menu" aria-label="Main navigation" data-menu>
+        <a href="#collection">Collection</a>
+        <a href="#mood-chamber">Mood Chamber</a>
+        <a href="#shop">Shop</a>
+        <a href="#journal">Journal</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" data-hero>
+        <video class="hero__media" autoplay muted loop playsinline preload="metadata" poster="./assets/hero-fallback.jpg">
+          <source src="./assets/hero-background.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__veil"></div>
+        <div class="hero__glow" data-hero-glow></div>
+        <div class="hero__content">
+          <p class="eyebrow reveal">Independent fragrance atelier</p>
+          <h1 class="hero__title reveal">Scent, composed<br /><em>in shadow.</em></h1>
+          <p class="hero__copy reveal">Fine fragrance and body rituals for the hours between memory and imagination.</p>
+          <a class="text-link reveal" href="#collection">Discover the collection <span aria-hidden="true">↘</span></a>
+        </div>
+        <a class="hero__scroll" href="#manifesto" aria-label="Scroll to introduction"><span></span></a>
+      </section>
+
+      <section class="manifesto section" id="manifesto">
+        <div class="container manifesto__grid">
+          <p class="eyebrow reveal">The atelier</p>
+          <div>
+            <h2 class="display display--large reveal">Not made to be noticed.<br /><em>Made to be remembered.</em></h2>
+            <p class="lead reveal">Each Veil fragrance begins with a feeling rather than a formula. We compose slowly, balancing rare naturals with modern molecules until the scent feels less like something worn and more like something lived.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="collection section section--dark" id="collection">
+        <div class="container section-heading reveal">
+          <p class="eyebrow eyebrow--gold">The collection</p>
+          <h2 class="display">Four scents, four worlds</h2>
+          <p>Move through each composition and find the one that feels familiar.</p>
+        </div>
+        <div class="collection-track" data-collection aria-label="Fragrance collection"></div>
+      </section>
+
+      <section class="mood section" id="mood-chamber" data-mood>
+        <div class="mood__ambient" data-mood-ambient></div>
+        <div class="mood__words" aria-hidden="true" data-mood-words>Choose your atmosphere</div>
+        <div class="mood__content container">
+          <p class="eyebrow" data-mood-label>Select a fragrance</p>
+          <h2 class="mood__name" data-mood-name>What are you drawn to?</h2>
+          <p class="mood__word" data-mood-word>Begin with a feeling</p>
+          <p class="mood__description" data-mood-description>Choose one of the four worlds below and let the room respond.</p>
+          <div class="mood-options" data-mood-options></div>
+        </div>
+      </section>
+
+      <section class="shop section" id="shop">
+        <div class="container section-heading section-heading--dark reveal">
+          <p class="eyebrow">Shop the collection</p>
+          <h2 class="display">Perfume &amp; Ritual</h2>
+        </div>
+        <div class="container product-group">
+          <div class="group-heading"><span>Eau de parfum</span></div>
+          <div class="product-grid" data-products="perfume"></div>
+        </div>
+
+        <article class="editorial-banner reveal">
+          <img src="./assets/editorial-divider.jpg" alt="A quiet body ritual in warm light" loading="lazy" />
+          <div class="editorial-banner__veil"></div>
+          <div class="editorial-banner__content">
+            <p class="eyebrow">The body as temple</p>
+            <h3>Ritual care for skin<br />that carries your scent</h3>
+          </div>
+        </article>
+
+        <div class="container product-group product-group--last">
+          <div class="group-heading"><span>Body ritual</span></div>
+          <div class="product-grid" data-products="body-ritual"></div>
+        </div>
+      </section>
+
+      <section class="journal section section--dark" id="journal">
+        <div class="container section-heading reveal">
+          <p class="eyebrow eyebrow--gold">From the journal</p>
+          <h2 class="display">What they whisper</h2>
+        </div>
+        <div class="container testimonial-grid" data-testimonials></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-intro reveal">
+            <p class="eyebrow eyebrow--gold">Private dispatches</p>
+            <h2 class="display">Stay close</h2>
+            <p>New rituals, limited editions, and quiet dispatches from the atelier.</p>
+            <form class="newsletter" data-newsletter>
+              <label class="sr-only" for="newsletter-email">Email address</label>
+              <input id="newsletter-email" type="email" placeholder="your@email.com" required />
+              <button type="submit">Subscribe</button>
+              <p class="newsletter__message" aria-live="polite" data-newsletter-message></p>
+            </form>
+          </div>
+          <div class="footer-links">
+            <div><h3>Shop</h3><a href="#shop">All</a><a href="#shop">Perfume</a><a href="#shop">Body Ritual</a></div>
+            <div><h3>Learn</h3><a href="#manifesto">About us</a><a href="#collection">Philosophy</a><a href="#footer">Stockists</a></div>
+            <div><h3>Support</h3><a href="#footer">Shipping</a><a href="#footer">Returns</a><a href="mailto:hello@atelierveil.com">Contact</a></div>
+            <div><h3>Social</h3><a href="#footer">Instagram</a><a href="#footer">Pinterest</a><a href="#footer">Newsletter</a></div>
+          </div>
+        </div>
+        <div class="footer-bottom" id="footer">
+          <span>© 2026 Atelier Veil</span><span>Terms · Privacy</span>
+        </div>
+      </div>
+    </footer>
+    <noscript>This experience requires JavaScript to display the collection.</noscript>
   </body>
 </html>
