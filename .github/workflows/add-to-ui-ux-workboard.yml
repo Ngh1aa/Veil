@@ -1,0 +1,19 @@
+name: Add issue to UI/UX Workboard
+
+on:
+  issues:
+    types: [opened, reopened, transferred]
+
+permissions:
+  contents: read
+
+jobs:
+  add-to-project:
+    name: Add issue to UI/UX Workboard
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add issue to project
+        uses: actions/add-to-project@v2
+        with:
+          project-url: https://github.com/orgs/Ngh1aa/projects/1
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
