@@ -1,0 +1,47 @@
+name: UI / UX improvement
+description: Ghi nhận vấn đề giao diện và trải nghiệm cần nâng cấp
+title: "[UI/UX] "
+labels: [enhancement]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Trang / khu vực
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Vấn đề hiện tại
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Kết quả mong muốn
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Nhóm thay đổi
+      options: [Visual hierarchy, Typography, Spacing / Layout, Color / Brand, Responsive, Navigation / User flow, CTA / Conversion, Component state, Animation / Motion, Image / Media, Accessibility, Khác]
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Ưu tiên
+      options: [P0 - Critical, P1 - High, P2 - Medium, P3 - Polish]
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Ảnh / reference / ghi chú
