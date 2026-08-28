@@ -1,0 +1,51 @@
+name: Bug report
+description: Báo lỗi chức năng, giao diện hoặc tương tác cần sửa
+title: "[BUG] "
+labels: [bug]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Trang / URL
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Lỗi hiện tại
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Cách tái hiện
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Kết quả mong muốn
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Khu vực lỗi
+      options: [UI / Visual, UX / Flow, Responsive, Interaction / Animation, JavaScript, Link / Asset, Accessibility, Khác]
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Mức độ
+      options: [P0 - Chặn sử dụng, P1 - Nghiêm trọng, P2 - Trung bình, P3 - Nhỏ / polish]
+    validations:
+      required: true
+  - type: input
+    id: viewport
+    attributes:
+      label: Thiết bị / viewport
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Ảnh / video / ghi chú bổ sung
