@@ -1,0 +1,44 @@
+name: Feature / Enhancement
+description: Đề xuất tính năng hoặc cải tiến mới cho prototype
+title: "[FEATURE] "
+labels: [enhancement]
+body:
+  - type: input
+    id: area
+    attributes:
+      label: Trang / khu vực liên quan
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Nhu cầu / vấn đề cần giải quyết
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Giải pháp đề xuất
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Ưu tiên
+      options: [P1 - High, P2 - Medium, P3 - Nice to have]
+    validations:
+      required: true
+  - type: textarea
+    id: userflow
+    attributes:
+      label: User flow dự kiến
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: Reference / ghi chú
