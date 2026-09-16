@@ -1,0 +1,59 @@
+/* Atelier Veil motion — ethereal / diffused / slow reveal */
+:root{
+  --veil-motion-ease:cubic-bezier(.18,.82,.22,1);
+  --veil-fast:220ms;
+  --veil-med:520ms;
+  --veil-slow:900ms;
+}
+
+@keyframes veil-open{
+  from{opacity:0;filter:blur(10px);transform:translate3d(0,18px,0) scale(.995)}
+  to{opacity:1;filter:blur(0);transform:none}
+}
+@keyframes veil-media-settle{
+  from{transform:scale(1.055);filter:saturate(.88) contrast(.96)}
+  to{transform:scale(1);filter:none}
+}
+@keyframes veil-glow-breathe{
+  0%,100%{opacity:.36;transform:scale(.98)}50%{opacity:.5;transform:scale(1.025)}
+}
+
+/* Reuse the existing observer; only change the choreography. */
+.reveal{opacity:0;filter:blur(8px);transform:translate3d(0,16px,0) scale(.997);transition:opacity var(--veil-slow) var(--veil-motion-ease),transform var(--veil-slow) var(--veil-motion-ease),filter 760ms var(--veil-motion-ease)}
+.reveal.is-visible{opacity:1;filter:none;transform:none}
+
+.hero__content .reveal{transform:translate3d(0,22px,0)}
+.hero__content .reveal.is-visible{transform:none}
+.hero__media{animation:veil-media-settle 1.8s var(--veil-motion-ease) both}
+.hero__glow{animation:veil-glow-breathe 8s ease-in-out infinite;will-change:transform,opacity}
+
+.fragrance-card,.product-card,.testimonial,.mood-option,.text-link,.site-menu a,.newsletter button{
+  transition:transform var(--veil-med) var(--veil-motion-ease),opacity var(--veil-fast) ease,box-shadow var(--veil-med) var(--veil-motion-ease),border-color var(--veil-fast) ease,color var(--veil-fast) ease,background-color var(--veil-fast) ease;
+}
+.fragrance-card:hover{transform:translate3d(0,-5px,0)}
+.fragrance-card__image,.product-card__visual img,.editorial-banner img{transition:transform 1s var(--veil-motion-ease),filter 700ms var(--veil-motion-ease)}
+.fragrance-card:hover .fragrance-card__image,.product-card:hover .product-card__visual img{transform:scale(1.018);filter:saturate(.94) contrast(1.02)}
+.product-card:hover{transform:translate3d(0,-3px,0)}
+.testimonial:hover{transform:translate3d(0,-2px,0)}
+
+/* Mood Chamber responds like atmosphere shifting, not a dashboard state change. */
+.mood,.mood__ambient,.mood__words,.mood__name,.mood__word,.mood__description{transition:background 1.15s var(--veil-motion-ease),color 760ms ease,opacity 760ms ease,transform 760ms var(--veil-motion-ease),filter 760ms var(--veil-motion-ease)}
+.mood-option:hover{transform:translateY(-2px)}
+.mood-option.is-active{transform:translateY(-3px) scale(1.015)}
+.mood-option.is-active .mood-option__ring{animation:veil-open 560ms var(--veil-motion-ease) both}
+
+.site-menu.is-open a{animation:veil-open 520ms var(--veil-motion-ease) both}
+.site-menu.is-open a:nth-child(2){animation-delay:55ms}.site-menu.is-open a:nth-child(3){animation-delay:110ms}.site-menu.is-open a:nth-child(4){animation-delay:165ms}
+.text-link:hover{transform:translateX(4px)}
+.newsletter button:active{transform:scale(.985)}
+
+@media (max-width:767px){
+  .hero__glow{animation:none}
+  .fragrance-card:hover,.product-card:hover,.testimonial:hover,.mood-option:hover,.mood-option.is-active,.text-link:hover{transform:none}
+  .reveal{filter:blur(5px);transition-duration:620ms}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .reveal,.reveal.is-visible,.hero__media,.hero__glow{opacity:1!important;filter:none!important;transform:none!important}
+}
